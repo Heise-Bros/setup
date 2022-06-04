@@ -1,58 +1,12 @@
-# Setup instructions
+# Node Web Development Setup instructions
 
-You will find below the instructions to set up you computer for web development with Node.
+This setup is adapted from the setup for the [Le Wagon Web Development course](https://www.lewagon.com/web-development-course/full-time).
 
 Please **read them carefully and execute all commands in the following order**.
 
-If you get stuck, just shoot me a message.
-
-You can also have a look at [this cheatsheets](https://github.com/lewagon/setup/tree/master/docs) for common issue fixes and tips :heavy_check_mark:
+Take a look at [these cheatsheets](https://github.com/lewagon/setup/tree/master/docs) for common issue fixes and tips :heavy_check_mark:
 
 Let's start :rocket:
-
-
-## Zoom
-
-To be able to interact when we are not in the same physical room, we will be using [Zoom](https://zoom.us/), a video conferencing tool.
-
-:warning: If you already have Zoom installed, please make sure that the version is at least **5.6**.
-
-Go to [zoom.us/download](https://zoom.us/download).
-
-Under **Zoom Client** click the **Download** button.
-
-Open the file you have just downloaded to install the app.
-
-Open the Zoom app.
-
-If you have a Mac with Apple silicon, [you are asked to install Rosetta](https://support.apple.com/en-us/HT211861). Click Install, then enter your user name and password to allow installation to proceed.
-
-![Install Rosetta](https://support.apple.com/library/content/dam/edam/applecare/images/en_US/macos/Big-Sur/macos-big-sur-software-update-rosetta-alert.jpg)
-
-If you already have a Zoom account, sign in using your credentials.
-
-If not, click on the **Sign Up Free** link:
-
-![Sign Up Free to Zoom](images/zoom_sign_up_free.png)
-
-You will be redirected to Zoom's website to complete a form.
-
-When it's done, go back to the Zoom app and sign in using your credentials.
-
-You should then see a screen like this:
-
-![Zoom Home Screen](images/zoom_home_screen.png)
-
-You can now close the Zoom app.
-
-
-## GitHub account
-
-Have you signed up to GitHub? If not, [do it right away](https://github.com/join).
-
-:point_right: **[Upload a picture](https://github.com/settings/profile)** and put your name correctly on your GitHub account. This is important as we'll use an internal dashboard with your avatar. Please do this **now**, before you continue with this guide.
-
-![GitHub picture](images/github_picture.png)
 
 
 ## A note about quitting apps on a Mac
@@ -156,8 +110,6 @@ code
 
 :heavy_check_mark: If a VS Code window has just opened, you're good to go :+1:
 
-:x: Otherwise, please **contact a teacher**
-
 
 ## VS Code Extensions
 
@@ -171,39 +123,14 @@ Copy-paste the following commands in your terminal:
 code --install-extension ms-vscode.sublime-keybindings
 code --install-extension emmanuelbeziat.vscode-great-icons
 code --install-extension github.github-vscode-theme
-code --install-extension MS-vsliveshare.vsliveshare
-code --install-extension rebornix.ruby
 code --install-extension dbaeumer.vscode-eslint
-code --install-extension Rubymaniac.vscode-paste-and-indent
-code --install-extension alexcvzz.vscode-sqlite
 ```
 
 Here is a list of the extensions you are installing:
 - [Sublime Text Keymap and Settings Importer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
 - [VSCode Great Icons](https://marketplace.visualstudio.com/items?itemName=emmanuelbeziat.vscode-great-icons)
-- [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
-- [Ruby](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Paste and Indent](https://marketplace.visualstudio.com/items?itemName=Rubymaniac.vscode-paste-and-indent)
-- [SQLite](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
 
-
-### Live Share configuration
-
-[Visual Studio Live Share](https://visualstudio.microsoft.com/services/live-share/) is a VS Code extension which allows you to share the code in your text editor for debugging and pair-programming: let's set it up!
-
-Launch VS Code from your terminal by typing `code` and pressing `Enter`.
-
-Click on the little arrow at the bottom of the left bar :point_down:
-
-![VS Code Live Share](images/vscode_live_share.png)
-
-- Click on the "Share" button, then on "GitHub (Sign in using GitHub account)".
-- A popup appears asking you to sign in with GitHub: click on "Allow".
-- You are redirected to a GitHub page in you browser asking you to authorize Visual Studio Code: click on "Continue" then "Authorize github".
-- VS Code may display additional pop-ups: close them by clicking "OK".
-
-That's it, you're good to go!
 
 
 ## macOS Terminal Theme
@@ -290,9 +217,9 @@ gh auth status
 
 ## Dotfiles (Standard configuration)
 
-Hackers love to refine and polish their shell and tools.
+It's nice to refine and polish your shell and tools.
 
-We'll start with a great default configuration provided by Le Wagon: [`lewagon/dotfiles`](https://github.com/lewagon/dotfiles).
+Here's a great default configuration provided by Le Wagon: [`lewagon/dotfiles`](https://github.com/lewagon/dotfiles).
 
 As your configuration is personal, you need your **own** repository storing it. So you will **fork** Le Wagon repository.
 
@@ -353,122 +280,6 @@ Please now **reset** your terminal by running:
 exec zsh
 ```
 
-
-## rbenv
-
-Let's install [`rbenv`](https://github.com/sstephenson/rbenv), a software to install and manage `ruby` environments.
-
-First, we need to clean up any previous Ruby installation you might have:
-
-```bash
-rvm implode && sudo rm -rf ~/.rvm
-# If you got "zsh: command not found: rvm", carry on. It means `rvm` is not
-# on your computer, that's what we want!
-
-sudo rm -rf $HOME/.rbenv /usr/local/rbenv /opt/rbenv /usr/local/opt/rbenv
-```
-
-:warning: This command may prompt for your password.
-
-:warning: When you type your password, nothing will show up on the screen, **that's normal**. This is a security feature to mask not only your password as a whole but also its length. Just type your password and when you're done, press `Enter`.
-
-In the terminal, run:
-
-```bash
-brew uninstall --force rbenv ruby-build
-exec zsh
-```
-
-Then run:
-
-```bash
-brew install rbenv
-```
-
-
-## Ruby
-
-### Installation
-
-Now, you are ready to install the latest [ruby](https://www.ruby-lang.org/en/) version and set it as the default version.
-
-Run this command, it will **take a while (5-10 minutes)**
-
-```bash
-rbenv install 3.0.3
-```
-
-Once the ruby installation is done, run this command to tell the system
-to use the 3.0.3 version by default.
-
-```bash
-rbenv global 3.0.3
-```
-
-**Reset** your terminal and check your Ruby version:
-
-```bash
-exec zsh
-```
-
-Then run:
-
-```bash
-ruby -v
-```
-
-:heavy_check_mark: If you see something starting with `ruby 3.0.3p` then you can proceed +1:
-
-:x: If not, **ask a teacher**
-
-### Installing some gems
-
-<details>
-  <summary>If you are in <bold>China</bold> 🇨🇳 click here</summary>
-
-  :warning: If you are in China, you should update the way we'll install gem with the following commands.
-
-```bash
-# China only!
-gem sources --remove https://rubygems.org/
-gem sources -a https://gems.ruby-china.com/
-gem sources -l
-# *** CURRENT SOURCES ***
-# https://gems.ruby-china.com/
-# Ruby-china.com must be in the list now
-```
-</details>
-
-**Everyone, in China or not**, continue here to install gems.
-
-In the ruby world, we call external libraries `gems`: they are pieces of ruby code that you can download and execute on your computer. Let's install some!
-
-In your terminal, copy-paste the following command:
-
-```bash
-gem install rake rspec rubocop-performance pry-byebug colored http 'rails:~>6.1'
-```
-
-:heavy_check_mark: If you get `xx gems installed`, then all good :+1:
-
-:x: If you encounter the following error:
-
-```bash
-ERROR: While executing gem ... (TypeError)
-incompatible marshal file format (can't be read)
-format version 4.8 required; 60.33 given
-```
-
-Run the following command:
-```bash
-rm -rf ~/.gemrc
-```
-
-Rerun the command to install the gems.
-
-:warning: **NEVER** install a gem with `sudo gem install`! Even if you stumble upon a Stackoverflow answer (or the terminal) telling you to do so.
-
-
 ## Node.js
 
 [Node.js](https://nodejs.org/en/) is a JavaScript runtime to execute JavaScript code in the terminal. Let's install it with [nvm](https://github.com/nvm-sh/nvm), a version manager for Node.js.
@@ -491,7 +302,7 @@ You should see a version. If not, ask a teacher.
 Now let's install node:
 
 ```bash
-nvm install 16.13.1
+nvm install 16.15.1
 ```
 
 When the installation is finished, run:
@@ -505,8 +316,6 @@ If you see `v16.13.1`, the installation succeeded :heavy_check_mark: You can the
 ```bash
 nvm cache clear
 ```
-
-:x: If not, **contact a teacher**
 
 
 ## yarn
@@ -528,8 +337,6 @@ yarn -v
 
 :heavy_check_mark: If you see a version, you're good :+1:
 
-:x: If not, **ask for a teacher**
-
 
 ## SQLite
 
@@ -548,8 +355,6 @@ sqlite3 -version
 ```
 
 :heavy_check_mark: If you see a version, you're good :+1:
-
-:x: If not, **ask for a teacher**
 
 
 ## PostgreSQL
@@ -581,78 +386,6 @@ postgres=#
 ```
 
 To quit it, type `\q` then `Enter`.
-
-
-## Check-up
-
-Let's check if you successfully installed everything.
-
-In you terminal, run the following command:
-
-```bash
-exec zsh
-```
-
-Then run:
-
-```bash
-curl -Ls https://raw.githubusercontent.com/lewagon/setup/master/check.rb > _.rb && ruby _.rb && rm _.rb || rm _.rb
-```
-
-:check_mark: If you get a green `Awesome! Your computer is now ready!`, then you're good :+1:
-
-:x: If not, **contact a teacher**.
-
-
-## Kitt
-
-:warning: If you have received an email from Le Wagon inviting you to sign up on Kitt (our learning platform), you can safely skip this step. Instead, please follow the instructions in the email you received if you haven't done so already.
-
-If you are unsure about what to do, you can follow [this link](https://kitt.lewagon.com/). If you are already logged in, you can safely skip this section. If you are not logged in, click on `Enter Kitt as a Student`. If you manage to login, you can safely skip this step. Otherwise ask a teacher whether you should have received an email or follow the instructions below.
-
-Register as a Wagon alumni by going to [kitt.lewagon.com/onboarding](http://kitt.lewagon.com/onboarding). Select your batch, sign in with GitHub and enter all your information.
-
-Your teacher will then validate that you are indeed part of the batch. You can ask him to do it as soon as you completed the registration form.
-
-Once the teacher has approved your profile, go to your email inbox. You should have 2 emails:
-
-- One from Slack, inviting you to the Le Wagon Alumni slack community (where you'll chat with your buddies and all the previous alumni). Click on **Join** and fill the information.
-- One from GitHub, inviting you to `lewagon` team. **Accept it** otherwise you won't be able to access the lecture slides.
-
-
-## Slack
-
-[Slack](https://slack.com/) is a communcation platform pretty popular in the tech industry.
-
-### Installation
-
-[Download the Slack app](https://itunes.apple.com/fr/app/slack/id803453959?mt=12) and install it.
-
-:warning: If you are already using Slack in your browser, please download and install **the desktop app** which is fully featured.
-
-
-### Settings
-
-Launch the app and sign in to `lewagon-alumni` organization.
-
-Make sure you **upload a profile picture** :point_down:
-
-![How to upload a profile picture on Slack](images/slack_profile_picture.gif)
-
-The idea is that you'll have Slack open all day, so that you can share useful links / ask for help / decide where to go to lunch / etc.
-
-To ensure that everything is working fine for video calls, let's test your camera and microphone:
-- Open the Slack app
-- In any channel message bar type `/call --test` and press `Enter`
-- Click on the "Start test" green button
-
-![Check microphone and webcam with Slack](images/slack_call_test.png)
-
-:heavy_check_mark: When the test is finished, you should see green "Succeed" messages at least for your microphone and camera. :+1:
-
-:x: If not, **contact a teacher**.
-
-You can also install Slack app on your phone and sign in `lewagon-alumni`!
 
 
 ## macOS settings
@@ -691,27 +424,7 @@ defaults write com.apple.screencapture location "${HOME}/Desktop"
 # etc..
 ```
 
-### Pin apps to your dock
-
-You are going to use most of the apps you've installed today really often. Let's pin them to your dock so that they are just one click away!
-
-To pin an app to your dock, launch the app, right-click on the icon in the taskbar to bring up the context menu and choose "Options" then "Keep in Dock".
-
-![How to pin an app to the taskbar in macOS](images/macos_dock.png)
-
-You must pin:
-- Your terminal
-- Your file explorer
-- VS Code
-- Your Internet browser
-- Slack
-- Zoom
-
 
 ## Setup completed!
 
-Your computer is now all set for [Le Wagon Web Development course](https://www.lewagon.com/web-development-course/full-time) :muscle: :clap:
-
-Enjoy the bootcamp, you will nail it :rocket:
-
-
+Your computer is now all set :muscle: :clap:
